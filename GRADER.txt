@@ -1,0 +1,19 @@
+For the WUGraph, I use a HashTableChained to keep track of all the vertices,
+a HashTableChained to store all the edges, and a DList to store all the vertices.
+
+  in removeVertex(), I go through all the adjacent edges of the vertex about to be
+  removed, then remove those edges from the vertex's edgelist, and do the same thing to
+  its partner (which is the corresponding edge adjacent to the other vertex). Then
+  remove both from the edge hashTable of the WUGraph. Since the operations in 
+  the while loop takes constant time and the while loop runs d times, the 
+  removeVertex() runs in O(d) time.
+
+
+  in getVertice(), I store the Vertices in a DList, and convert the list into an 
+  array when needed, which takes O(|V|) time, because I have to go through every
+  vertex once.
+
+
+In Kruskal, I use a data structure call KruskalEdge, which is used to store the
+vertices on both sides of the edge, and the weight of the edge. KruskalEdge implements the interface Comparable so
+that it can be compared in the sorting process.
